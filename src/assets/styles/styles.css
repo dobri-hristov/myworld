@@ -1,0 +1,67 @@
+.bg-container {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home-page {
+  background-image: url("../images/earth.jpg");
+  min-height: 100vh;
+}
+
+.default-page {
+  background-image: url("../images/mountain.jpg");
+  min-height: 100vh;
+}
+
+.country-page {
+  background-image: url("../images/sky.jpg");
+  min-height: 60vh;
+}
+
+.light-shadow {
+  box-shadow: 0px 0px 400px 10px rgba(255, 255, 255, 1);
+}
+
+.dark-shadow {
+  box-shadow: 0px 0px 400px 10px rgb(13, 13, 14);
+}
+
+.link:hover {
+  color: blue;
+}
+
+@media screen and (max-width: 768px) {
+  .link,
+  .empty {
+    box-shadow: 0px 0px 100px 80px rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .light-shadow {
+    box-shadow: none;
+  }
+}
+
+/* paginator */
+.page-item .page-link {
+  color: black;
+}
+.react-bootstrap-table-page-btns-ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.react-bootstrap-table {
+  font-size: 0.8rem;
+}
+
+.dropdown-toggle:hover {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.map {
+  height: 500px;
+  position: relative;
+  outline: none;
+}
