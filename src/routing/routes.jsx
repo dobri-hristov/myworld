@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Home from "../Pages/Home";
 import ErrorPage from "../Pages/ErrorPage";
 import Countries from "../Pages/Countries";
@@ -13,7 +13,7 @@ const routes = [
   },
   {
     path: "/countries",
-    element: Countries,
+    element: Countries, 
   },
   {
     path: "/countries/:country",
@@ -29,4 +29,4 @@ const routes = [
   errorElement: <ErrorPage />,
 }));
 
-export const router = createBrowserRouter([...routes]);
+export const router = createHashRouter([...routes]);
