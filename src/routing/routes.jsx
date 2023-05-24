@@ -1,5 +1,5 @@
 import React from "react";
-import { createHashRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Home from "../Pages/Home";
 import ErrorPage from "../Pages/ErrorPage";
 import Countries from "../Pages/Countries";
@@ -29,4 +29,4 @@ const routes = [
   errorElement: <ErrorPage />,
 }));
 
-export const router = createHashRouter([...routes]);
+export const router = createBrowserRouter([...routes]);
