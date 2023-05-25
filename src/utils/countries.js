@@ -12,7 +12,7 @@ export const mergeCountriesData = (countries, cities) => {
     region: country.region,
     subregion: country.subregion,
     name: country.name.common,
-    capital: country.capital,
+    capital: country.capital || null,
     languages: country.languages,
     flag: country.flags.svg,
     coatOfArms: country.coatOfArms.svg,
