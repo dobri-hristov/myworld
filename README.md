@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# MyWorld
+
+This project was bootstrapped with [Create React App]. Dependencies used: redux, saga, bootstrap.
 
 This project was bootstrapped with [Create React App]
 
