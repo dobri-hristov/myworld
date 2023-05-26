@@ -11,6 +11,10 @@ export const routes = [
     element: Home,
   },
   {
+    path: "/myworld",
+    element: Home,
+  },
+  {
     path: "/countries",
     element: Countries, 
   },

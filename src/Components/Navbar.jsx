@@ -41,11 +41,11 @@ const Navigation = () => {
       );
     }
   }, [city]);
-
+  console.log(location.pathname);
   return (
     <Navbar className="position-absolute w-100 m-0" variant="dark">
       <Row className="w-100 mx-auto">
-        {location.pathname === "/" && (
+        {(location.pathname === "/" || location.pathname === "/myworld") && (
           <Col
             lg={3}
             md={{ order: 1, span: 4 }}
@@ -84,7 +84,7 @@ const Navigation = () => {
             </Nav.Link>
           </Nav>
         </Col>
-        {location.pathname === "/" && (
+        {(location.pathname === "/" || location.pathname === "/myworld") && (
           <Col lg={3} md={4} xs={{ order: 3 }} className="p-1">
             <InputForm
               value={city}
