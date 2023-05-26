@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App]
 
-You can visit us аt: https://dobri-hristov.github.io/myworld/
+You can see the project at: https://dobri-hristov.github.io/myworld/
 
 Libraries used: redux, saga, bootstrap
 
