@@ -1,12 +1,10 @@
 # MyWorld
 
-This project was bootstrapped with [Create React App]. Dependencies used: redux, saga, bootstrap.
-
 This project was bootstrapped with [Create React App]
 
 You can visit us аt: https://dobri-hristov.github.io/myworld/
 
-Dependencies used: redux, saga, bootstrap
+Libraries used: redux, saga, bootstrap
 
 ## Available Scripts
 
