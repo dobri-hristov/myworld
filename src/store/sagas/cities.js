@@ -23,10 +23,8 @@ function* getCitiesByRequest({ payload: { city, country } }) {
 
 function* getCityInfo({ payload: { name } }) {
   try {
-    yield put(loadingActions.loadingOn());
     const info = yield call(api.getCityInfo, { name });
     yield put(citiesActions.getCityInfoSuccess({ info }));
-    yield put(loadingActions.loadingOff());
   } catch (e) {
     toast.error(`Couldn't retrieve city information`);
   }

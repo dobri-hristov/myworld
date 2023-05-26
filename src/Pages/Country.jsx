@@ -16,15 +16,17 @@ import { IoPeopleSharp } from "react-icons/io5";
 import { btnWithLinkStyle } from "../utils/countries";
 import { SYMBOLS } from "../utils/constants";
 import notAvaliable from "../assets/images/notAvaliable.jpg";
-import { isEmpty } from "lodash";
+import Loading from "../Components/common/Loading";
+import { useLoading } from "../hooks/useLoading";
 
 const Country = ({ pageStyle }) => {
   const { country } = useParams();
-  const exactCountry = useSelector((state) => state.countries.country.data);
+  let exactCountry = useSelector((state) => state.countries.country.data);
   const countryInfo = useSelector((state) => state.countries.country.info);
-  const cityInfo = useSelector((state) => state.cities.city.info);
+  const cityInfo = useSelector((state) => state.cities.city?.info);
   const dispatch = useDispatch();
   const [modalShow, setModalShow] = useState(false);
+  const { initializing, loading } = useLoading();
 
   useEffect(() => {
     dispatch(
@@ -37,21 +39,24 @@ const Country = ({ pageStyle }) => {
         name: country,
       })
     );
-  }, []);
+  }, [country]);
 
   useEffect(() => {
-    exactCountry.capital &&
-      dispatch(
-        citiesActions.getCityInfo({
-          name: exactCountry.capital,
-        })
-      );
+    dispatch(
+      citiesActions.getCityInfo({
+        name: exactCountry.capital,
+      })
+    );
   }, [exactCountry.capital]);
 
   return (
     <>
       <div className={`country-page bg-container dark-shadow ${pageStyle}`}>
-        {!isEmpty(exactCountry) && (
+        {loading ? (
+          <div className="mt-5">
+            <Loading />
+          </div>
+        ) : (
           <Row className="align-items-center m-2">
             <Col className="text-center m-2">
               <Image src={exactCountry.flag || notAvaliable} width={300} />
@@ -106,23 +111,25 @@ const Country = ({ pageStyle }) => {
               />
             </Col>
           </Row>
-        ) }
+        )}
       </div>
-      {countryInfo && (
+      {countryInfo && !loading && (
         <div style={{ marginTop: "-5.6vh" }}>
           <CustomCard
             place={country}
             text={countryInfo.extract}
             link={countryInfo.content_urls?.desktop?.page}
+            btnText={`learn more about ${country}`}
           />
         </div>
       )}
-      {exactCountry.capital && (
+      {exactCountry.capital && cityInfo && !loading && (
         <div className="mt-5 mb-5">
           <CustomCard
             place={exactCountry.capital}
             text={cityInfo.extract}
             link={cityInfo.content_urls?.desktop?.page}
+            btnText={`learn more about ${exactCountry.capital}`}
           >
             <Container className="mb-2">
               <Image src={cityInfo.originalimage?.source} fluid />

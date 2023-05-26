@@ -28,18 +28,20 @@ function* getCountriesByName({ payload: { name } }) {
     yield put(countriesActions.getCountriesSuccess({ countries }));
     yield put(loadingActions.loadingOff());
   } catch (e) {
-    toast.error(`Couldn't retrieve country with name ${name}`);
+    toast.error(`Couldn't retrieve countries with name: ${name}`);
   }
 }
 
 function* getExactCountryByName({ payload: { name } }) {
   try {
+    yield put(loadingActions.loadingOn());
     const { data } = yield call(api.getExactCountryByName, { name });
     const cities = yield call(getAllCities);
     const country = mergeCountriesData(data, cities);
     yield put(countriesActions.getExactCountrySuccess({ data: country[0] }));
+    yield put(loadingActions.loadingOff());
   } catch (e) {
-    toast.error(`Couldn't retrieve country with name ${name}`);
+    toast.error(`Couldn't retrieve country with name: ${name}`);
   }
 }
 

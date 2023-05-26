@@ -22,8 +22,8 @@ const Cities = ({ pageStyle }) => {
   const [disabledCountry, setDisabledCountry] = useState(
     defaultData.city ? false : true
   );
-  const [city, setCity] = useState(defaultData.city);
-  const [country, setCountry] = useState(defaultData.country);
+  const [city, setCity] = useState(defaultData.city || "");
+  const [country, setCountry] = useState(defaultData.country || "");
   const cities = useSelector((state) => state.cities);
   const { loading } = useLoading();
   const { leftCities, totalCities } = getAllCities(cities);

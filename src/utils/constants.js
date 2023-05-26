@@ -1,5 +1,3 @@
-export const CURRENT_PATH = window.location.pathname;
-
 export const COLUMN_NAMES = {
   COUNTRIES: "countries",
 };

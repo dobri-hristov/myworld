@@ -2,8 +2,9 @@ import React from "react";
 import { Popover, Nav, Image } from "react-bootstrap";
 import { generateWikiLink } from "../utils/common";
 import { generateMessage } from "../utils/cities";
+import { Link } from "react-router-dom";
 
-const PlacesPopover = ({ places, isCountry, isCity, city }) => {
+const PlacesPopover = ({ places, isCountry, isCity, city, setCountry }) => {
   return (
     <Popover className="text-center m-auto bg-transparent border-0">
       <Popover.Body className="p-2 text-white-50">
@@ -11,7 +12,9 @@ const PlacesPopover = ({ places, isCountry, isCity, city }) => {
           (isCountry
             ? places.slice(0, 10).map((el, index) => (
                 <Nav.Link
-                  href={`countries/${el.name}`}
+                  as={Link}
+                  to={`countries/${el.name}`}
+                  onClick={() => setCountry("")}
                   className="link mb-3"
                   key={index}
                 >
@@ -26,7 +29,8 @@ const PlacesPopover = ({ places, isCountry, isCity, city }) => {
                   (el, index) =>
                     index < 1 && (
                       <Nav.Link
-                        href={generateWikiLink(el)}
+                        as={Link}
+                        to={generateWikiLink(el)}
                         className="link mb-3"
                         key={index}
                       >

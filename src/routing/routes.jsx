@@ -1,12 +1,11 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+// import { createBrowserRouter } from "react-router-dom";
 import Home from "../Pages/Home";
-import ErrorPage from "../Pages/ErrorPage";
 import Countries from "../Pages/Countries";
 import Country from "../Pages/Country";
 import Cities from "../Pages/Cities";
 
-const routes = [
+export const routes = [
   {
     path: "/",
     element: Home,
@@ -26,7 +25,7 @@ const routes = [
 ].map((router) => ({
   ...router,
   element: <router.element pageStyle="pt-5 pb-5" />,
-  errorElement: <ErrorPage />,
+  // errorElement: <ErrorPage />,
 }));
 
-export const router = createBrowserRouter([...routes]);
+// export const router = createBrowserRouter([...routes]);

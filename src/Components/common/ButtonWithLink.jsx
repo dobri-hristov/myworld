@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Button, Popover, Overlay } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const ButtonWithLink = ({
   link,
@@ -21,7 +22,7 @@ const ButtonWithLink = ({
   };
 
   return (
-    <a href={link}>
+    <Link to={link}>
       <Button
         variant={variant}
         className={style}
@@ -44,7 +45,7 @@ const ButtonWithLink = ({
           </Popover.Body>
         </Popover>
       </Overlay>
-    </a>
+    </Link>
   );
 };
 
