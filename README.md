@@ -1,19 +1,18 @@
-# MyWorld
+# About MyWorld
 
 This project was bootstrapped with [Create React App]
 
-You can see the project at: https://dobri-hristov.github.io/myworld/
+Еxplore the world with МyWorld
 
-Libraries used: redux, saga, bootstrap
+Dependencies: react, redux, redux-saga, bootstrap
 
-## Available Scripts
+## Running The Project
 
-In the project directory, you can run:
+Live version: 
+https://dobri-hristov.github.io/myworld/
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+From the repo:
+1. Clone this project locally
+2. Run npm install in your bash/command line
+3. Run npm start in your bash/command line
+4. See the project
